@@ -1,0 +1,71 @@
+@function em($el,$context:16px) {
+  @if type_of($el) == number and unit($el) == 'px' {
+    @return ($el / $context) * 1em;
+  } @else {
+    @error 'Function em() requires a px unit as first argument / La función em() requiere una unidad de pixeles como primer argumento (el segundo es opcional)'
+  }
+}
+@function rem($el) {
+  @if type_of($el) == number and unit($el) == 'px' {
+    @return ($el / 16px) * 1rem;
+  } @else {
+    @error 'Function rem() requires a px unit as argument / La funcion rem() requiere una unidad de pixeles como argumento';
+  }
+}
+*,*::before,*::after{
+	box-sizing:border-box;
+	padding: 0;
+	margin: 0;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+*::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb{
+	background-color: $main-color;
+	border-radius: 20px;
+}
+body,html{
+	font-size: 1rem;
+	font-weight: normal;
+	font-family: 'Poppins', sans-serif;
+	color: #222;
+	a,p,span,input,textarea{
+		font-family: 'Poppins', sans-serif;
+	}
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: .5rem;
+    margin-top: 0;
+}
+a{
+	text-decoration: none;
+	outline: none;
+	border: none;
+	color: #222;
+	&:hover{
+		//color: darken($main-color,15%);
+	}
+}
+img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+p{
+	line-height: 1.4;
+    margin: 0 0 .8rem;
+    font-size: rem(16px);
+}

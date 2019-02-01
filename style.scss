@@ -1,0 +1,18 @@
+$max-width: 1216px;
+$max-width-tablet: 966px;
+$max-width-movil: 746px;
+$transition: all 0.2s ease;
+
+$bp-0:560px;
+$bp-1:768px;
+$bp-2:966px;
+$bp-3:1024px;
+
+$main-color:#FF416C;
+$second-color:#FDBB2D;
+
+@import 'css/reset';
+
+@import 'css/objects';
+@import 'css/core';
+@import 'css/article';
